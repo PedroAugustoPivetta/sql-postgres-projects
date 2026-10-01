@@ -29,9 +29,9 @@ This repository is structured around 5 distinct enterprise database scenarios:
 ```text
 ├── 01-projects/
 │   ├── E-commerce/
-│   │   ├── DDL - E-commerce - Query.sql       # Table definitions, constraints, primary & foreign keys
+│   │   ├── DDL - E-commerce - Query.sql   # Table definitions, constraints, primary & foreign keys
 │   │   ├── DML - E-commerce - Query.sql   # Data population, updates, and strategic deletes
-│   │   └── DQL - E-commerce - Query.sql    # Complex queries (JOINs, aggregations, GROUP BY, HAVING)
+│   │   └── DQL - E-commerce - Query.sql   # Complex queries (JOINs, aggregations, GROUP BY, HAVING)
 │   ├── E-Learning/
 │   ├── Streaming/
 │   ├── MedicalClinic/
