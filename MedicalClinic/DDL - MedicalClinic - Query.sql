@@ -1,10 +1,10 @@
 CREATE TABLE specialties (
-    specialty_id GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    specialty_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     specialty_name VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE doctors (
-    doctor_id GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    doctor_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     specialty_id INT NOT NULL,
     full_name VARCHAR(100) NOT NULL,
     license_number VARCHAR(20) NOT NULL UNIQUE,
@@ -13,7 +13,7 @@ CREATE TABLE doctors (
 );
 
 CREATE TABLE patients (
-    patient_id GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    patient_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     full_name VARCHAR(100) NOT NULL,
     national_id VARCHAR(14) NOT NULL UNIQUE,
     birth_date DATE NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE patients (
 );
 
 CREATE TABLE appointments (
-    appointment_id GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    appointment_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     patient_id INT NOT NULL,
     doctor_id INT NOT NULL,
     appointment_date TIMESTAMP NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE appointments (
 );
 
 CREATE TABLE prescriptions (
-    prescription_id GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    prescription_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     appointment_id INT NOT NULL,
     medication VARCHAR(100) NOT NULL,
     dosage VARCHAR(200) NOT NULL,

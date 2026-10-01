@@ -1,5 +1,5 @@
 CREATE TABLE instructors (
-    instructor_id GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    instructor_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     full_name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     bio TEXT,
@@ -8,7 +8,7 @@ CREATE TABLE instructors (
 
 
 CREATE TABLE students (
-    student_id GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    student_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     full_name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     birth_date DATE,
@@ -17,7 +17,7 @@ CREATE TABLE students (
 
 
 CREATE TABLE courses (
-    course_id GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    course_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     instructor_id INT NOT NULL,
     title VARCHAR(150) NOT NULL,
     workload_hours INT NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE courses (
 
 
 CREATE TABLE modules (
-    module_id GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    module_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     course_id INT NOT NULL,
     module_title VARCHAR(100) NOT NULL,
     module_order INT NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE modules (
 
 
 CREATE TABLE enrollments (
-    enrollment_id GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    enrollment_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     student_id INT NOT NULL,
     course_id INT NOT NULL,
     enrollment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
